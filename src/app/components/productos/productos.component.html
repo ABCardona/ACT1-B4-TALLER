@@ -1,0 +1,36 @@
+<!-- 
+aqui unicamente deben de ser los productos, y 
+aqui llamará a celulares y laptops, para que se vayan mostrando, y para que en 
+el menu, se muestren ambos, lo que quiero acá es que me dejes documentado el codigo
+para ir arreglando o editando por ejemplo textos, y en laptops y celulares, ir arregland
+nombres o descripciones, precios  imagenes
+-->
+
+<!-- Contenedor principal de la sección de productos -->
+<section class="productos">
+  <!-- Sección de celulares en oferta -->
+  <app-celulares></app-celulares>
+
+  <!-- Sección de laptops en oferta -->
+  <app-laptops></app-laptops>
+</section>
+
+<style>
+  /* ===== Estilos de la sección de productos ===== */
+
+  /* Contenedor tipo flex para acomodar celulares y laptops */
+  .productos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #993e3e; /* TODO: cambiar color */
+  }
+
+  /* Separación y espacio para cada sección dentro del contenedor */
+  .productos app-celulares,
+  .productos app-laptops {
+    flex: 1;
+    min-width: 0;
+  }
+</style>
