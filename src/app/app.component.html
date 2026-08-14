@@ -33,9 +33,9 @@ lo antes mencionado
 <!-- Sección de contacto: datos de contacto ficticios (placeholder) -->
 <section id="contacto" class="contacto">
   <h2>Contáctanos</h2>
-  <p>Teléfono: 555-1234-5678</p>
-  <p>Correo: contacto@ejemplo.com</p>
-  <p>Dirección: Calle Ficticia 123, Ciudad de Ejemplo</p>
+  <p>Teléfono: 3345-2351</p>
+  <p>Correo: MacroTiendas@org.com</p>
+  <p>Dirección: 9na Calle, 11 Avenida, Zona 19 La Florida</p>
 </section>
 
 <!-- Sección sobre nosotros: descripción genérica de la empresa (placeholder) -->
@@ -52,8 +52,15 @@ lo antes mencionado
 
 <style>
   /* ===== Estilos del componente principal ===== */
+  /* Paleta de colores:
+     - Fondo Principal: #F8FAFC (Gris Pizarra Claro)
+     - Tarjetas/Cards:  #FFFFFF (Blanco Puro)
+     - Texto y Menús:   #0F172A (Azul Oscuro Pizarra)
+     - CTA:             #2563EB (Azul Eléctrico)
+     - Acento:          #06B6D4 (Cyan Tecnológico)
+  */
 
-  /* Navegación superior transparente */
+  /* Navegación superior */
   nav {
     position: sticky;
     top: 0;
@@ -62,19 +69,26 @@ lo antes mencionado
     justify-content: center;
     gap: 2rem;
     padding: 1rem 2rem;
-    background-color: transparent; /* TODO: cambiar color */
+    background-color: #F8FAFC; /* Fondo Principal */
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
   }
 
   nav a {
-    color: #ffffff; /* TODO: cambiar color (texto del nav, blanco o negro) */
+    color: #0F172A; /* Texto y Menús */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.2s ease;
+  }
+
+  /* Hover sutil en los links del nav */
+  nav a:hover {
+    color: #06B6D4; /* Acento */
   }
 
   /* Sección hero: titular principal */
   .hero {
-    background-color: #0F172A; /* TODO: cambiar color */
-    color: #ffffff; /* TODO: cambiar color */
+    background-color: #0F172A; /* Texto y Menús (fondo oscuro) */
+    color: #FFFFFF; /* Tarjetas (texto blanco) */
     text-align: center;
     padding: 5rem 1rem;
   }
@@ -86,44 +100,90 @@ lo antes mencionado
 
   .hero .subtitle {
     font-size: 1.2rem;
-    color: #cccccc; /* TODO: cambiar color */
+    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
   }
 
   /* Bloque "head" entre el hero y los productos */
   .head {
-    background-color: #f5f5f5; /* TODO: cambiar color */
-    color: #333333; /* TODO: cambiar color */
+    background-color: #FFFFFF; /* Tarjetas */
+    color: #0F172A; /* Texto y Menús */
     text-align: center;
     padding: 3rem 1rem;
   }
 
   .head h2 {
     margin: 0;
+    font-size: 1.75rem;
   }
 
-  /* Secciones de contacto y sobre nosotros (estilo footer) */
+  /* Secciones de contacto y sobre nosotros (estilo footer oscuro) */
   .contacto,
   .sobre-nosotros {
-    background-color: #ececec; /* TODO: cambiar color */
-    color: #333333; /* TODO: cambiar color */
+    background-color: #0F172A; /* Texto y Menús (fondo oscuro) */
+    color: #FFFFFF; /* Tarjetas (texto blanco) */
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 1rem;
   }
 
+  .contacto h2,
+  .sobre-nosotros h2 {
+    font-size: 1.75rem;
+    margin: 0 0 1rem;
+  }
+
   .contacto p {
     margin: 0.5rem 0;
+    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
   }
 
   .sobre-nosotros p {
     max-width: 40rem;
     margin: 0 auto;
     line-height: 1.6;
+    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
   }
 
   /* Fondo general de toda la página (fallback por si alguna sección no cubre el 100%) */
-:host {
-  display: block;
-  background-color: #F8FAFC; /* TODO: cambiar color */
-}
+  :host {
+    display: block;
+    background-color: #F8FAFC; /* Fondo Principal */
+  }
+
+  /* Responsividad básica para pantallas pequeñas */
+  @media (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .hero {
+      padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+    }
+
+    .head {
+      padding: 2rem 1rem;
+    }
+
+    .head h2,
+    .contacto h2,
+    .sobre-nosotros h2 {
+      font-size: 1.5rem;
+    }
+
+    .contacto,
+    .sobre-nosotros {
+      padding: 2rem 1.5rem;
+    }
+  }
 </style>

@@ -9,28 +9,69 @@ nombres o descripciones, precios  imagenes
 <!-- Contenedor principal de la sección de productos -->
 <section class="productos">
   <!-- Sección de celulares en oferta -->
-  <app-celulares></app-celulares>
+  <div class="producto-seccion">
+    <!-- Título de la fila de celulares -->
+    <h3 class="producto-titulo">Celulares</h3>
+
+    <!-- Fila con scroll horizontal (las tarjetas se deslizan de izquierda a derecha) -->
+    <div class="productos-fila">
+      <app-celulares></app-celulares>
+    </div>
+  </div>
 
   <!-- Sección de laptops en oferta -->
-  <app-laptops></app-laptops>
+  <div class="producto-seccion">
+    <!-- Título de la fila de laptops -->
+    <h3 class="producto-titulo">Laptops</h3>
+
+    <!-- Fila con scroll horizontal (las tarjetas se deslizan de izquierda a derecha) -->
+    <div class="productos-fila">
+      <app-laptops></app-laptops>
+    </div>
+  </div>
 </section>
 
 <style>
   /* ===== Estilos de la sección de productos ===== */
+  /* Paleta de colores:
+     - Fondo Principal: #F8FAFC (Gris Pizarra Claro)
+     - Tarjetas/Cards:  #FFFFFF (Blanco Puro)
+     - Texto y Menús:   #0F172A (Azul Oscuro Pizarra)
+     - CTA:             #2563EB (Azul Eléctrico)
+     - Acento:          #06B6D4 (Cyan Tecnológico)
+  */
 
-  /* Contenedor tipo flex para acomodar celulares y laptops */
+  /* Contenedor general: fondo Gris Pizarra Claro */
   .productos {
+    background-color: #F8FAFC; /* Fondo Principal */
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: #993e3e; /* TODO: cambiar color */
+    gap: 2.5rem;
   }
 
-  /* Separación y espacio para cada sección dentro del contenedor */
-  .productos app-celulares,
-  .productos app-laptops {
-    flex: 1;
-    min-width: 0;
+  /* Título de cada fila de productos */
+  .producto-titulo {
+    color: #0F172A; /* Texto y Menús */
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+
+  /* Fila con scroll horizontal de tarjetas */
+  .productos-fila {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem; /* espacio para que no se corte la sombra de las tarjetas */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* El componente interno (app-celulares / app-laptops) actúa como fila de tarjetas */
+  .productos-fila app-celulares,
+  .productos-fila app-laptops {
+    display: flex;
+    gap: 1.5rem;
+    flex: none;
   }
 </style>

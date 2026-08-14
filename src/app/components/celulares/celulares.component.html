@@ -1,0 +1,145 @@
+<!-- 
+  ===== SECCIÓN DE CELULARES EN OFERTA =====
+  Cada tarjeta (div.card) es un producto.
+  Para agregar más celulares: copia y pega un bloque completo div.card
+  y edita los datos marcados con TODO (imagen, nombre, descripción, precio).
+-->
+
+<!-- ===== TARJETA DE PRODUCTO #1 ===== -->
+<div class="card">
+  <!-- IMAGEN placeholder (TODO: agregar imagen real del producto) -->
+  <div class="card-imagen">
+    <span>Imagen del producto</span>
+  </div>
+
+  <!-- NOMBRE del producto (TODO: editar nombre) -->
+  <h4 class="card-titulo">Celular Modelo X</h4>
+
+  <!-- DESCRIPCIÓN corta (TODO: editar descripción) -->
+  <p class="card-descripcion">Celular de gama media con pantalla de 6.5 pulgadas.</p>
+
+  <!-- BADGE de oferta (opcional) -->
+  <span class="card-badge">Oferta</span>
+
+  <!-- PRECIO (TODO: editar precio) -->
+  <p class="card-precio">Q0.00</p>
+
+  <!-- BOTÓN "Añadir al carrito" -->
+  <button class="card-boton" type="button">Añadir al carrito</button>
+</div>
+
+<!-- ===== TARJETA DE PRODUCTO #2 ===== -->
+<div class="card">
+  <!-- IMAGEN placeholder (TODO: agregar imagen real del producto) -->
+  <div class="card-imagen">
+    <span>Imagen del producto</span>
+  </div>
+
+  <!-- NOMBRE del producto (TODO: editar nombre) -->
+  <h4 class="card-titulo">Celular Modelo Z</h4>
+
+  <!-- DESCRIPCIÓN corta (TODO: editar descripción) -->
+  <p class="card-descripcion">Celular con cámara de alta resolución y batería de larga duración.</p>
+
+  <!-- BADGE de oferta (opcional) -->
+  <span class="card-badge">Oferta</span>
+
+  <!-- PRECIO (TODO: editar precio) -->
+  <p class="card-precio">Q0.00</p>
+
+  <!-- BOTÓN "Añadir al carrito" -->
+  <button class="card-boton" type="button">Añadir al carrito</button>
+</div>
+
+<style>
+  /* ===== Estilos de las tarjetas de celulares ===== */
+  /* Paleta de colores:
+     - Fondo Principal: #F8FAFC (Gris Pizarra Claro)
+     - Tarjetas/Cards:  #FFFFFF (Blanco Puro)
+     - Texto y Menús:   #0F172A (Azul Oscuro Pizarra)
+     - CTA:             #2563EB (Azul Eléctrico)
+     - Acento:          #06B6D4 (Cyan Tecnológico)
+  */
+
+  /* El host actúa como fila horizontal de tarjetas */
+  :host {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  /* Tarjeta de producto */
+  .card {
+    width: 280px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: #FFFFFF; /* Tarjetas */
+    border: 1px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s ease;
+  }
+
+  /* Borde hover sutil usando el color de acento */
+  .card:hover {
+    border-color: #06B6D4; /* Acento */
+  }
+
+  /* Imagen placeholder (TODO: reemplazar por <img> real) */
+  .card-imagen {
+    height: 160px;
+    border-radius: 8px;
+    background-color: #F8FAFC; /* Fondo Principal (gris placeholder) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0F172A; /* Texto y Menús */
+    font-size: 0.85rem;
+  }
+
+  .card-titulo {
+    margin: 0;
+    color: #0F172A; /* Texto y Menús */
+    font-size: 1.1rem;
+  }
+
+  .card-descripcion {
+    margin: 0;
+    color: #0F172A; /* Texto y Menús */
+    font-size: 0.9rem;
+  }
+
+  .card-badge {
+    align-self: flex-start;
+    background-color: #06B6D4; /* Acento */
+    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .card-precio {
+    margin: 0;
+    color: #0F172A; /* Texto y Menús */
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .card-boton {
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    background-color: #2563EB; /* CTA (Azul Eléctrico) */
+    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .card-boton:hover {
+    background-color: #06B6D4; /* Acento */
+  }
+</style>
