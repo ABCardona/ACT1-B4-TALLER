@@ -1,121 +1,129 @@
-<!-- 
-  ===== SECCIÓN DE CELULARES EN OFERTA =====
-  Cada tarjeta (div.card) es un producto.
-  Para agregar más celulares: copia y pega un bloque completo div.card
-  y edita los datos marcados con TODO (imagen, nombre, descripción, precio).
--->
-
-<!-- ===== TARJETA DE PRODUCTO #1 ===== -->
 <div class="card">
-  <!-- IMAGEN placeholder (TODO: agregar imagen real del producto) -->
-  <div class="card-imagen">
-    <span>Imagen del producto</span>
-  </div>
-
-  <!-- NOMBRE del producto (TODO: editar nombre) -->
-  <h4 class="card-titulo">Celular Modelo X</h4>
-
-  <!-- DESCRIPCIÓN corta (TODO: editar descripción) -->
-  <p class="card-descripcion">Celular de gama media con pantalla de 6.5 pulgadas.</p>
-
-  <!-- BADGE de oferta (opcional) -->
+  <img
+    class="card-image"
+    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=160&h=280&q=80"
+    alt="Celular Modelo X"
+    loading="lazy"
+  />
+  <h4 class="card-titulo">Samsung A22</h4>
+  <p class="card-descripcion">6.5 pulgadas con 128 GB de almacenamiento y 8 GB de RAM, cámara de alta resolución de 48 MP.</p>
   <span class="card-badge">Oferta</span>
-
-  <!-- PRECIO (TODO: editar precio) -->
-  <p class="card-precio">Q0.00</p>
-
-  <!-- BOTÓN "Añadir al carrito" -->
+  <p class="card-precio">Q2.800</p>
   <button class="card-boton" type="button">Añadir al carrito</button>
 </div>
 
-<!-- ===== TARJETA DE PRODUCTO #2 ===== -->
 <div class="card">
-  <!-- IMAGEN placeholder (TODO: agregar imagen real del producto) -->
-  <div class="card-imagen">
-    <span>Imagen del producto</span>
-  </div>
-
-  <!-- NOMBRE del producto (TODO: editar nombre) -->
-  <h4 class="card-titulo">Celular Modelo Z</h4>
-
-  <!-- DESCRIPCIÓN corta (TODO: editar descripción) -->
-  <p class="card-descripcion">Celular con cámara de alta resolución y batería de larga duración.</p>
-
-  <!-- BADGE de oferta (opcional) -->
+  <img
+    class="card-image"
+    src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=160&h=280&q=80"
+    alt="Celular Modelo Z"
+    loading="lazy"
+  />
+  <h4 class="card-titulo">Iphone 13 Pro max</h4>
+  <p class="card-descripcion">Pantalla de 6.7 pulgadas y sistema de cámaras avanzado. 256 GB de almacenamiento.</p>
   <span class="card-badge">Oferta</span>
+  <p class="card-precio">Q7.500</p>
+  <button class="card-boton" type="button">Añadir al carrito</button>
+</div>
 
-  <!-- PRECIO (TODO: editar precio) -->
-  <p class="card-precio">Q0.00</p>
+<div class="card">
+  <img
+    class="card-image"
+    src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=160&h=280&q=80"
+    alt="Celular Modelo A"
+    loading="lazy"
+  />
+  <h4 class="card-titulo">Iphone 11</h4>
+  <p class="card-descripcion">Pantalla de 6.5 pulgadas, 8 GB de RAM y sistema de cámaras avanzado. 128 GB de almacenamiento.</p>
+  <span class="card-badge">Oferta</span>
+  <p class="card-precio">Q5.200</p>
+  <button class="card-boton" type="button">Añadir al carrito</button>
+</div>
 
-  <!-- BOTÓN "Añadir al carrito" -->
+<div class="card">
+  <img
+    class="card-image"
+    src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=160&h=280&q=80"
+    alt="Celular Modelo B"
+    loading="lazy"
+  />
+  <h4 class="card-titulo">Iphone 12</h4>
+  <p class="card-descripcion">Pantalla de 6.1 pulgadas, 8 GB de RAM y sistema de cámaras avanzado. 128 GB de almacenamiento.</p>
+  <span class="card-badge">Oferta</span>
+  <p class="card-precio">Q6.000</p>
   <button class="card-boton" type="button">Añadir al carrito</button>
 </div>
 
 <style>
-  /* ===== Estilos de las tarjetas de celulares ===== */
-  /* Paleta de colores:
-     - Fondo Principal: #F8FAFC (Gris Pizarra Claro)
-     - Tarjetas/Cards:  #FFFFFF (Blanco Puro)
-     - Texto y Menús:   #0F172A (Azul Oscuro Pizarra)
-     - CTA:             #2563EB (Azul Eléctrico)
-     - Acento:          #06B6D4 (Cyan Tecnológico)
-  */
-
-  /* El host actúa como fila horizontal de tarjetas */
   :host {
     display: flex;
     gap: 1.5rem;
   }
 
-  /* Tarjeta de producto */
   .card {
+    position: relative;
     width: 280px;
     flex: 0 0 auto;
     scroll-snap-align: start;
-    background-color: #FFFFFF; /* Tarjetas */
-    border: 1px solid transparent;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 2px 8px rgba(11, 19, 43, 0.08);
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    transition: border-color 0.2s ease;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
 
-  /* Borde hover sutil usando el color de acento */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 75%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+
   .card:hover {
-    border-color: #06B6D4; /* Acento */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
   }
 
-  /* Imagen placeholder (TODO: reemplazar por <img> real) */
-  .card-imagen {
-    height: 160px;
-    border-radius: 8px;
-    background-color: #F8FAFC; /* Fondo Principal (gris placeholder) */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0F172A; /* Texto y Menús */
-    font-size: 0.85rem;
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px 12px 0 0;
+    display: block;
   }
 
   .card-titulo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
     margin: 0;
-    color: #0F172A; /* Texto y Menús */
+    color: #0B132B;
     font-size: 1.1rem;
   }
 
   .card-descripcion {
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    color: #0F172A; /* Texto y Menús */
+    color: #94A3B8;
     font-size: 0.9rem;
   }
 
   .card-badge {
     align-self: flex-start;
-    background-color: #06B6D4; /* Acento */
-    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    background-color: #38BDF8;
+    color: #0B132B;
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
     font-size: 0.75rem;
@@ -123,23 +131,27 @@
   }
 
   .card-precio {
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    color: #0F172A; /* Texto y Menús */
+    color: #0B132B;
     font-size: 1.25rem;
     font-weight: bold;
   }
 
   .card-boton {
+    font-family: 'Inter', sans-serif;
     border: none;
     border-radius: 8px;
     padding: 0.6rem 1rem;
-    background-color: #2563EB; /* CTA (Azul Eléctrico) */
-    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+    color: #FFFFFF;
     font-weight: bold;
     cursor: pointer;
+    transition: opacity 0.25s ease, box-shadow 0.25s ease;
   }
 
   .card-boton:hover {
-    background-color: #06B6D4; /* Acento */
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
   }
 </style>

@@ -1,44 +1,19 @@
-<!-- 
-esta seccion debe de sr el inicio, aqui debe de ir el nav que contenga
-lo antes mencionado
--->
-
-<!-- Navegación principal: links tipo ancla que llevan a las secciones de la página -->
 <nav>
   <a href="#hero">Menu</a>
-  <a href="#contacto">Contáctanos</a>
   <a href="#sobre-nosotros">Sobre nosotros</a>
+  <a href="#contacto">Contáctanos</a>
 </nav>
 
 <section id="hero" class="hero">
-  <h1>Macrosistemas</h1>
-  <p class="subtitle">La mejor tienda de tecnología</p>
+  <h1>AXON TECH</h1>
 </section>
 
-<!-- 
- aqui debe de ir un espacio o un head donde diga "los mejores productos a su disposicion
- y que solo sea un fondo de otro color"
--->
 <section class="head">
-  <h2>Los mejores productos a su disposición</h2>
+  <h2>Lo último en rendimieno y gadgets.</h2>
 </section>
 
-<!-- 
-  aqui debe de ir un componente donde se pueda ir deslizando entre
-  los productos que venderé, este componente tendrá los demas componentes que son cardss 
-  donde colocaré informaciopn
--->
-  <app-productos></app-productos>
+<app-productos></app-productos>
 
-<!-- Sección de contacto: datos de contacto ficticios (placeholder) -->
-<section id="contacto" class="contacto">
-  <h2>Contáctanos</h2>
-  <p>Teléfono: 3345-2351</p>
-  <p>Correo: MacroTiendas@org.com</p>
-  <p>Dirección: 9na Calle, 11 Avenida, Zona 19 La Florida</p>
-</section>
-
-<!-- Sección sobre nosotros: descripción genérica de la empresa (placeholder) -->
 <section id="sobre-nosotros" class="sobre-nosotros">
   <h2>Sobre nosotros</h2>
   <p>
@@ -48,19 +23,61 @@ lo antes mencionado
   </p>
 </section>
 
+<section id="contacto" class="contacto">
+  <div class="contacto-contenido">
+    <h2>Contáctanos</h2>
+    <div class="contacto-items">
+      <div class="contacto-item">
+        <img
+          class="contacto-icono"
+          src="https://api.iconify.design/mdi/phone.svg?color=%23F1F5F9"
+          alt="Teléfono"
+          loading="lazy"
+        />
+        <div class="contacto-item-texto">
+          <span class="contacto-label">Teléfono</span>
+          <p class="contacto-dato">3345-2351</p>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <img
+          class="contacto-icono"
+          src="https://api.iconify.design/mdi/email.svg?color=%23F1F5F9"
+          alt="Correo"
+          loading="lazy"
+        />
+        <div class="contacto-item-texto">
+          <span class="contacto-label">Correo</span>
+          <p class="contacto-dato">axontech@org.com</p>
+        </div>
+      </div>
+      <div class="contacto-item">
+        <img
+          class="contacto-icono"
+          src="https://api.iconify.design/mdi/map-marker.svg?color=%23F1F5F9"
+          alt="Dirección"
+          loading="lazy"
+        />
+        <div class="contacto-item-texto">
+          <span class="contacto-label">Dirección</span>
+          <p class="contacto-dato">9na Calle, 11 Avenida, Zona 19 La Florida</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <router-outlet />
 
 <style>
-  /* ===== Estilos del componente principal ===== */
-  /* Paleta de colores:
-     - Fondo Principal: #F8FAFC (Gris Pizarra Claro)
-     - Tarjetas/Cards:  #FFFFFF (Blanco Puro)
-     - Texto y Menús:   #0F172A (Azul Oscuro Pizarra)
-     - CTA:             #2563EB (Azul Eléctrico)
-     - Acento:          #06B6D4 (Cyan Tecnológico)
-  */
+  :host {
+    display: block;
+    background-color: #F8FAFC;
+    background-image: radial-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: 'Inter', sans-serif;
+  }
 
-  /* Navegación superior */
   nav {
     position: sticky;
     top: 0;
@@ -69,88 +86,128 @@ lo antes mencionado
     justify-content: center;
     gap: 2rem;
     padding: 1rem 2rem;
-    background-color: #F8FAFC; /* Fondo Principal */
-    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+    background-color: #0B132B;
+    box-shadow: 0 1px 4px rgba(11, 19, 43, 0.5);
   }
 
   nav a {
-    color: #0F172A; /* Texto y Menús */
+    font-family: 'Inter', sans-serif;
+    color: #F1F5F9;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: color 0.2s ease;
   }
 
-  /* Hover sutil en los links del nav */
   nav a:hover {
-    color: #06B6D4; /* Acento */
+    color: #38BDF8;
   }
 
-  /* Sección hero: titular principal */
   .hero {
-    background-color: #0F172A; /* Texto y Menús (fondo oscuro) */
-    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    background: linear-gradient(135deg, #0B132B 0%, #1C2541 60%, #1E40AF 100%);
+    color: #F1F5F9;
     text-align: center;
     padding: 5rem 1rem;
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
     margin: 0;
+    color: #F1F5F9;
   }
 
   .hero .subtitle {
     font-size: 1.2rem;
-    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
+    color: #94A3B8;
   }
 
-  /* Bloque "head" entre el hero y los productos */
   .head {
-    background-color: #FFFFFF; /* Tarjetas */
-    color: #0F172A; /* Texto y Menús */
+    color: #0B132B;
     text-align: center;
     padding: 3rem 1rem;
+    border-bottom: 1px solid #E2E8F0;
   }
 
   .head h2 {
+    font-family: 'Space Grotesk', sans-serif;
     margin: 0;
     font-size: 1.75rem;
+    color: #0B132B;
   }
 
-  /* Secciones de contacto y sobre nosotros (estilo footer oscuro) */
-  .contacto,
   .sobre-nosotros {
-    background-color: #0F172A; /* Texto y Menús (fondo oscuro) */
-    color: #FFFFFF; /* Tarjetas (texto blanco) */
+    max-width: 60rem;
+    margin: 3rem auto;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(11, 19, 43, 0.14);
     text-align: center;
-    padding: 3rem 2rem;
-    margin-top: 1rem;
+    padding: 2.5rem 2rem;
   }
 
-  .contacto h2,
   .sobre-nosotros h2 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.75rem;
     margin: 0 0 1rem;
-  }
-
-  .contacto p {
-    margin: 0.5rem 0;
-    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
+    color: #0B132B;
   }
 
   .sobre-nosotros p {
     max-width: 40rem;
     margin: 0 auto;
     line-height: 1.6;
-    color: #F8FAFC; /* Fondo Principal (texto gris claro) */
+    color: #334155;
   }
 
-  /* Fondo general de toda la página (fallback por si alguna sección no cubre el 100%) */
-  :host {
+  .contacto {
+    width: 100%;
+    margin: 3rem 0 0;
+    background-color: #0B132B;
+    border-top: 1px solid #334155;
+    color: #F1F5F9;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .contacto h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    margin: 0 0 2rem;
+    color: #F1F5F9;
+  }
+
+  .contacto-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem 3rem;
+  }
+
+  .contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .contacto-icono {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+  }
+
+  .contacto-label {
     display: block;
-    background-color: #F8FAFC; /* Fondo Principal */
+    color: #94A3B8;
+    font-size: 0.85rem;
   }
 
-  /* Responsividad básica para pantallas pequeñas */
+  .contacto-dato {
+    margin: 0.15rem 0 0;
+    color: #F1F5F9;
+  }
+
   @media (max-width: 768px) {
     nav {
       flex-wrap: wrap;
@@ -176,14 +233,24 @@ lo antes mencionado
     }
 
     .head h2,
-    .contacto h2,
-    .sobre-nosotros h2 {
+    .sobre-nosotros h2,
+    .contacto h2 {
       font-size: 1.5rem;
     }
 
-    .contacto,
     .sobre-nosotros {
+      margin: 2rem 1rem;
       padding: 2rem 1.5rem;
+    }
+
+    .contacto {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .contacto-items {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
     }
   }
 </style>
